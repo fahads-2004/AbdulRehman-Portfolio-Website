@@ -35,7 +35,7 @@ const Footer = () => {
                     <div className="footer-text">
                         <p>
                             Made with <FaHeart className="heart-icon" /> by{' '}
-                            <span className="gradient-text">AbdulRehman</span>
+                            <span className="gradient-text">Blueframe System</span>
                         </p>
                         <p className="copyright">© {currentYear} All rights reserved.</p>
                     </div>

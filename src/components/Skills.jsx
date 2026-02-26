@@ -19,25 +19,51 @@ const Skills = () => {
         { name: 'npm', icon: <FaNpm />, color: '#CB3837' },
     ];
 
+    const proficiency = [
+        { name: 'React / JavaScript', percent: 92 },
+        { name: 'HTML / CSS', percent: 94 },
+        { name: 'UI/UX & Responsive Design', percent: 88 },
+        { name: 'Git / Tooling', percent: 85 },
+    ];
+
     return (
         <section id="skills" className="skills">
             <div className="container">
                 <div className="section-header">
-                    <h2>My <span className="gradient-text">Skills</span></h2>
-                    <p>Technologies I work with</p>
+                    <h2>Core <span className="gradient-text">Skills</span></h2>
+                    <p>Hands-on technologies and practices</p>
                 </div>
 
+                <h3 className="skills-subtitle">Technical Stacks</h3>
                 <div className="skills-grid">
                     {skills.map((skill, index) => (
                         <div
                             key={index}
                             className="skill-card glass-card"
-                            style={{ animationDelay: `${index * 0.1}s` }}
+                            style={{ animationDelay: `${index * 0.05}s` }}
                         >
                             <div className="skill-icon" style={{ color: skill.color }}>
                                 {skill.icon}
                             </div>
-                            <h3>{skill.name}</h3>
+                            <h4>{skill.name}</h4>
+                        </div>
+                    ))}
+                </div>
+
+                <h3 className="skills-subtitle">Proficiency Levels</h3>
+                <div className="proficiency-list">
+                    {proficiency.map((item, index) => (
+                        <div key={index} className="proficiency-item">
+                            <div className="proficiency-label">
+                                <span>{item.name}</span>
+                                <span>{item.percent}%</span>
+                            </div>
+                            <div className="proficiency-bar">
+                                <div
+                                    className="proficiency-fill"
+                                    style={{ width: `${item.percent}%` }}
+                                />
+                            </div>
                         </div>
                     ))}
                 </div>

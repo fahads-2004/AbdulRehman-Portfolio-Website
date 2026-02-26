@@ -1,0 +1,48 @@
+.experience {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.experience-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.experience-item {
+    padding: 28px 32px;
+}
+
+.experience-header {
+    margin-bottom: 16px;
+}
+
+.experience-header h3 {
+    font-size: 1.2rem;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.experience-meta {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.experience-points {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.experience-points li {
+    margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+    .experience-item {
+        padding: 20px 24px;
+    }
+}
