@@ -30,7 +30,7 @@ const Navbar = () => {
                         <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                             <FaGithub />
                         </a>
-                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/abdul-rehman-101678215/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                             <FaLinkedin />
                         </a>
                         <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">

@@ -7,22 +7,19 @@ const Projects = () => {
             title: 'E-Commerce Platform',
             description: 'A modern e-commerce platform with cart functionality, product filtering, and secure checkout process.',
             technologies: ['React', 'Redux', 'Stripe API'],
-            gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            image: 'project1'
+            image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
         },
         {
             title: 'Task Management App',
             description: 'Collaborative task management tool with real-time updates, drag-and-drop functionality, and team features.',
             technologies: ['React', 'Firebase', 'Material-UI'],
-            gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-            image: 'project2'
+            image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
         },
         {
             title: 'Weather Dashboard',
             description: 'Beautiful weather application with location-based forecasts, interactive maps, and detailed analytics.',
             technologies: ['React', 'OpenWeather API', 'Chart.js'],
-            gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-            image: 'project3'
+            image: 'https://images.unsplash.com/photo-1504386106331-3e4e71712b38?w=600&h=400&fit=crop',
         }
     ];
 
@@ -41,10 +38,12 @@ const Projects = () => {
                             className="project-card glass-card"
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
-                            <div
-                                className="project-header"
-                                style={{ background: project.gradient }}
-                            >
+                            <div className="project-header">
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="project-image"
+                                />
                                 <div className="project-overlay">
                                     <h3 className="project-number">0{index + 1}</h3>
                                 </div>

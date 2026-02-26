@@ -16,8 +16,11 @@ const Hero = () => {
             <div className="container">
                 <div className="hero-content">
                     <div className="hero-text fade-in-up">
-                        <div className="hero-badge glass-card">
-                            <FaCode /> Front-End Developer
+                        <div className="hero-badges">
+                            <span className="hero-badge glass-card">
+                                <FaCode /> Front-End Developer
+                            </span>
+                            <span className="hero-available glass-card">Available for projects</span>
                         </div>
                         <h1>
                             Hi, I'm <span className="gradient-text">AbdulRehman</span>
@@ -26,6 +29,26 @@ const Hero = () => {
                             Crafting beautiful, responsive, and user-friendly web experiences
                             with modern technologies and creative design solutions.
                         </p>
+                        <div className="hero-tech-pills">
+                            <span>React</span>
+                            <span>JavaScript</span>
+                            <span>CSS</span>
+                            <span>UI/UX</span>
+                        </div>
+                        <div className="hero-stats">
+                            <div className="hero-stat glass-card">
+                                <strong>20+</strong>
+                                <span>Projects</span>
+                            </div>
+                            <div className="hero-stat glass-card">
+                                <strong>15+</strong>
+                                <span>Clients</span>
+                            </div>
+                            <div className="hero-stat glass-card">
+                                <strong>3+</strong>
+                                <span>Years</span>
+                            </div>
+                        </div>
                         <div className="hero-buttons">
                             <button className="btn btn-primary" onClick={scrollToContact}>
                                 <FaRocket /> Get In Touch

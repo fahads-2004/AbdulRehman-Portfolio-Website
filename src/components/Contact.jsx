@@ -1,45 +1,50 @@
 import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
 import { FaPaperPlane, FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
 import './Contact.css';
+
+// Formspree form ID – create a form at https://formspree.io with arehmaanmughal@gmail.com and replace this ID
+const FORMSPREE_FORM_ID = 'YOUR_FORMSPREE_FORM_ID';
 
 const Contact = () => {
     const form = useRef();
     const [status, setStatus] = useState('');
     const [loading, setLoading] = useState(false);
 
-    const sendEmail = (e) => {
+    const sendEmail = async (e) => {
         e.preventDefault();
         setLoading(true);
         setStatus('');
 
-        // Replace these with your EmailJS credentials
-        // Get them from: https://www.emailjs.com/
-        const serviceId = 'YOUR_SERVICE_ID';
-        const templateId = 'YOUR_TEMPLATE_ID';
-        const publicKey = 'YOUR_PUBLIC_KEY';
+        if (FORMSPREE_FORM_ID === 'YOUR_FORMSPREE_FORM_ID') {
+            setStatus('error');
+            setLoading(false);
+            setTimeout(() => setStatus(''), 5000);
+            return;
+        }
 
-        emailjs
-            .sendForm(serviceId, templateId, form.current, publicKey)
-            .then(
-                (result) => {
-                    console.log('SUCCESS!', result.text);
-                    setStatus('success');
-                    setLoading(false);
-                    form.current.reset();
+        try {
+            const response = await fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+                method: 'POST',
+                body: new FormData(form.current),
+                headers: { Accept: 'application/json' },
+            });
 
-                    // Clear success message after 5 seconds
-                    setTimeout(() => setStatus(''), 5000);
-                },
-                (error) => {
-                    console.log('FAILED...', error.text);
-                    setStatus('error');
-                    setLoading(false);
+            const data = await response.json();
 
-                    // Clear error message after 5 seconds
-                    setTimeout(() => setStatus(''), 5000);
-                }
-            );
+            if (data.ok) {
+                setStatus('success');
+                form.current.reset();
+                setTimeout(() => setStatus(''), 5000);
+            } else {
+                setStatus('error');
+                setTimeout(() => setStatus(''), 5000);
+            }
+        } catch (err) {
+            setStatus('error');
+            setTimeout(() => setStatus(''), 5000);
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -50,6 +55,15 @@ const Contact = () => {
                     <p>Let's work together on your next project</p>
                 </div>
 
+                <div className="contact-cta">
+                    <p className="contact-cta-title">Let's build something together</p>
+                    <p className="contact-cta-sub">Available for freelance projects and full-time roles.</p>
+                    <div className="contact-cta-links">
+                        <a href="mailto:arehmaanmughal@gmail.com" className="contact-cta-link">Contact Me</a>
+                        <a href="https://www.linkedin.com/in/abdul-rehman-101678215/" target="_blank" rel="noopener noreferrer" className="contact-cta-link">LinkedIn</a>
+                    </div>
+                </div>
+
                 <div className="contact-content">
                     <form ref={form} onSubmit={sendEmail} className="contact-form glass-card">
                         <div className="form-group">
@@ -57,7 +71,7 @@ const Contact = () => {
                             <input
                                 type="text"
                                 id="user_name"
-                                name="user_name"
+                                name="name"
                                 placeholder="John Doe"
                                 required
                             />
@@ -68,7 +82,7 @@ const Contact = () => {
                             <input
                                 type="email"
                                 id="user_email"
-                                name="user_email"
+                                name="email"
                                 placeholder="john@example.com"
                                 required
                             />
@@ -120,7 +134,7 @@ const Contact = () => {
 
                         {status === 'error' && (
                             <div className="status-message error">
-                                <FaExclamationCircle /> Oops! Something went wrong. Please try again.
+                                <FaExclamationCircle /> Oops! Something went wrong. Please try again or email me at arehmaanmughal@gmail.com.
                             </div>
                         )}
                     </form>

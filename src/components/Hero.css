@@ -18,15 +18,74 @@
     z-index: 2;
 }
 
+.hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
 .hero-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 10px 20px;
-    margin-bottom: 24px;
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--text-primary);
+}
+
+.hero-available {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.hero-tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.hero-tech-pills span {
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.hero-stat {
+    padding: 16px 24px;
+    text-align: center;
+    min-width: 100px;
+}
+
+.hero-stat strong {
+    display: block;
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-stat span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
 .hero-subtitle {
@@ -156,6 +215,12 @@
 
     .hero-text {
         text-align: center;
+    }
+
+    .hero-badges,
+    .hero-tech-pills,
+    .hero-stats {
+        justify-content: center;
     }
 
     .hero-subtitle {
