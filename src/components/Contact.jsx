@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { FaPaperPlane, FaCheckCircle, FaExclamationCircle } from 'react-icons/fa';
+import ScrollReveal from './ScrollReveal';
 import './Contact.css';
 
 // Formspree form ID – create a form at https://formspree.io with arehmaanmughal@gmail.com and replace this ID
@@ -50,11 +51,12 @@ const Contact = () => {
     return (
         <section id="contact" className="contact">
             <div className="container">
-                <div className="section-header">
+                <ScrollReveal className="section-header">
                     <h2>Get In <span className="gradient-text">Touch</span></h2>
                     <p>Let's work together on your next project</p>
-                </div>
+                </ScrollReveal>
 
+                <ScrollReveal delay={80}>
                 <div className="contact-cta">
                     <p className="contact-cta-title">Let's build something together</p>
                     <p className="contact-cta-sub">Available for freelance projects and full-time roles.</p>
@@ -63,7 +65,9 @@ const Contact = () => {
                         <a href="https://www.linkedin.com/in/abdul-rehman-101678215/" target="_blank" rel="noopener noreferrer" className="contact-cta-link">LinkedIn</a>
                     </div>
                 </div>
+                </ScrollReveal>
 
+                <ScrollReveal delay={120}>
                 <div className="contact-content">
                     <form ref={form} onSubmit={sendEmail} className="contact-form glass-card">
                         <div className="form-group">
@@ -139,6 +143,7 @@ const Contact = () => {
                         )}
                     </form>
                 </div>
+                </ScrollReveal>
             </div>
         </section>
     );

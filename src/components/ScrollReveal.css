@@ -1,0 +1,11 @@
+/* Scroll reveal: elements fade in and slide up when they enter the viewport */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.scroll-reveal-in-view {
+    opacity: 1;
+    transform: translateY(0);
+}

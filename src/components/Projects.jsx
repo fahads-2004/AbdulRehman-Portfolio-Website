@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollReveal from './ScrollReveal';
 import './Projects.css';
 
 const Projects = () => {
@@ -32,18 +33,15 @@ const Projects = () => {
     return (
         <section id="projects" className="projects">
             <div className="container">
-                <div className="section-header">
+                <ScrollReveal className="section-header">
                     <h2>Selected <span className="gradient-text">Projects</span></h2>
                     <p>Client, freelance, and personal builds</p>
-                </div>
+                </ScrollReveal>
 
                 <div className="projects-grid">
                     {projects.map((project, index) => (
-                        <div
-                            key={index}
-                            className="project-card glass-card"
-                            style={{ animationDelay: `${index * 0.1}s` }}
-                        >
+                        <ScrollReveal key={index} delay={index * 100}>
+                        <div className="project-card glass-card">
                             <div className="project-header">
                                 <img
                                     src={project.image}
@@ -70,6 +68,7 @@ const Projects = () => {
                                 </div>
                             </div>
                         </div>
+                        </ScrollReveal>
                     ))}
                 </div>
             </div>

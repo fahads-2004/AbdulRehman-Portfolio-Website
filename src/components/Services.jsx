@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollReveal from './ScrollReveal';
 import './Services.css';
 
 const Services = () => {
@@ -32,16 +33,18 @@ const Services = () => {
     return (
         <section id="services" className="services">
             <div className="container">
-                <div className="section-header">
+                <ScrollReveal className="section-header">
                     <h2>Freelance <span className="gradient-text">Services</span></h2>
                     <p>Front-End • React • UI/UX • Web Apps</p>
-                </div>
+                </ScrollReveal>
                 <div className="services-grid">
                     {services.map((item, index) => (
-                        <div key={index} className="service-card glass-card">
-                            <h3>{item.title}</h3>
-                            <p>{item.description}</p>
-                        </div>
+                        <ScrollReveal key={index} delay={index * 80}>
+                            <div className="service-card glass-card">
+                                <h3>{item.title}</h3>
+                                <p>{item.description}</p>
+                            </div>
+                        </ScrollReveal>
                     ))}
                 </div>
             </div>

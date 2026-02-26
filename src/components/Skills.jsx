@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaFigma, FaSass, FaNpm } from 'react-icons/fa';
 import { SiTailwindcss, SiTypescript, SiRedux, SiVite } from 'react-icons/si';
+import ScrollReveal from './ScrollReveal';
 import './Skills.css';
 
 const Skills = () => {
@@ -29,18 +30,18 @@ const Skills = () => {
     return (
         <section id="skills" className="skills">
             <div className="container">
-                <div className="section-header">
+                <ScrollReveal className="section-header">
                     <h2>Core <span className="gradient-text">Skills</span></h2>
                     <p>Hands-on technologies and practices</p>
-                </div>
+                </ScrollReveal>
 
+                <ScrollReveal delay={80}>
                 <h3 className="skills-subtitle">Technical Stacks</h3>
                 <div className="skills-grid">
                     {skills.map((skill, index) => (
                         <div
                             key={index}
                             className="skill-card glass-card"
-                            style={{ animationDelay: `${index * 0.05}s` }}
                         >
                             <div className="skill-icon" style={{ color: skill.color }}>
                                 {skill.icon}
@@ -49,7 +50,9 @@ const Skills = () => {
                         </div>
                     ))}
                 </div>
+                </ScrollReveal>
 
+                <ScrollReveal delay={150}>
                 <h3 className="skills-subtitle">Proficiency Levels</h3>
                 <div className="proficiency-list">
                     {proficiency.map((item, index) => (
@@ -67,6 +70,7 @@ const Skills = () => {
                         </div>
                     ))}
                 </div>
+                </ScrollReveal>
             </div>
         </section>
     );

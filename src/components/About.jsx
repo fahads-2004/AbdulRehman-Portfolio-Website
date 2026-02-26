@@ -1,17 +1,19 @@
 import React from 'react';
-import { FaUser, FaHeart, FaLightbulb, FaRocket } from 'react-icons/fa';
+import { FaHeart, FaLightbulb, FaRocket } from 'react-icons/fa';
+import ScrollReveal from './ScrollReveal';
 import './About.css';
 
 const About = () => {
     return (
         <section id="about" className="about">
             <div className="container">
-                <div className="section-header">
+                <ScrollReveal className="section-header">
                     <h2>About <span className="gradient-text">Me</span></h2>
                     <p>Get to know me better</p>
-                </div>
+                </ScrollReveal>
 
                 <div className="about-content">
+                    <ScrollReveal>
                     <div className="about-text glass-card">
                         <h3>Front-End Developer & UI/UX Enthusiast</h3>
                         <p>
@@ -58,6 +60,7 @@ const About = () => {
                             </div>
                         </div>
                     </div>
+                    </ScrollReveal>
                 </div>
             </div>
         </section>
